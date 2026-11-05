@@ -162,3 +162,9 @@ Default philosophy when torn between inferring and asking the operator (in produ
 - `/ship`: finishing pass for any change (tests, docs, changelog, dash check, commit).
 - `/add-connector`: scaffold and register a new printer brand driver end to end.
 - `/pr-review`: review a community PR with this repo's specific failure modes in mind.
+
+## Multi-AI work rule
+
+Before changing anything beyond a one-line fix, follow the fleet work-board rule in AGENTS.md:
+
+@AGENTS.md

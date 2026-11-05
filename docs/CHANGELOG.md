@@ -2,6 +2,16 @@
 
 ---
 
+## 2026-11-03: Fleet work-board rule for AI agents
+
+Several AI tools take turns on this fork (two Claude accounts, Copilot, Gemini, local models). Two of them can pick up the same work or lose it at a usage limit unless each one checks the work out first. The fleet's work board (local-ai-infrastructure `scripts/ai_board.py`) already does this for the other repos, so this repo now carries the same paste-in block. No code, schema, or runtime behaviour changes.
+
+### Changes
+- `AGENTS.md` (new): the fleet "Multi-AI work rule" block (claim on the board, checkpoint, finish with `ai_board done`, a different agent verifies).
+- `CLAUDE.md`: a short section that imports `@AGENTS.md`.
+
+---
+
 ## 2026-09-30: Print Queue page under Fleet
 
 The dispatch check on the Projects page explains one part at a time, and the Schedule page shows time rather than eligibility. Neither answers the question an operator asks walking the floor: "what is waiting, in what order, and which printers can take it?" The new Print Queue page (sidebar, indented under Fleet, at `/fleet/queue`) lists every open part of every active project in the scheduler's own order, with a tag for each printer that matches the part (model, group, loaded filament) coloured by whether it is ready, busy, or awaiting sign-off. `NEXT` marks a ready printer that would print this part on its next dispatch. A part with no matching printer shows why instead: no G-code, no active printer of that model, none in the allowed groups, or none with the required filament loaded.
